@@ -162,6 +162,49 @@ def test_add_transactions
   end
 end
 
+
+### Outflow
+
+# set_value takes in an ammount, cleans it up, and rounds it to the second place
+#
+# given a jankety number it should return a clean one
+
+def test_set_value
+  # setup
+    testiflow = Outflow.new
+
+  # run
+    testiflow.set_value("$32,2012.138875")
+  # compare
+  if
+    testiflow.to_f == 322012.14
+    print "Pass test set_value" + "\n"
+  else
+    print "Fail test set_value" + "\n"
+  end
+end
+
+### Inflow
+
+# set_value: same as set_value in Outflow
+#
+# same as set_value above
+
+def test_set_value_in
+
+  # setup
+    testiflow = Inflow.new
+
+  # run
+    testiflow.set_value("$73,132415.1341341")
+  # compare
+  if testiflow.to_f == 73132415.13
+    print "Pass test set_value_in" + "\n"
+  else
+    print "Fail test set_value_in" + "\n"
+  end
+end
+
 test_set_up_intitial_values()
 test_update_tally()
 test_set_up_intitial_values()
@@ -169,3 +212,5 @@ test_already_has_category()
 # test_category()
 test_set_up_initial_values_category()
 test_add_transactions()
+test_set_value()
+test_set_value_in()

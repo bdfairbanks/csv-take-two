@@ -18,7 +18,6 @@ def csvToHash(accountName)
     		row["Category"] = "Groceries"
     	end
 	    if row["Account"] == accountName			
-binding.pry
 			outflow = row["Outflow"].delete(",").delete("$")
 			inflow = row["Inflow"].delete(",").delete("$")
 
@@ -83,7 +82,6 @@ while k < inputNames.length
 		end
 		puts key + "\t\t|" + value[0].to_s + "\t|" + value[1].to_s
 	end
-binding.pry
 
 	k += 1
 end
